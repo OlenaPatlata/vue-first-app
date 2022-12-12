@@ -12,6 +12,7 @@
 <script>
 
 import Container from '../shared/Container.vue'
+
   export default {
     name: 'ApartmentsList',
     components: {

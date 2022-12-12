@@ -29,7 +29,7 @@ export default [
       phone: '123-12-26',
       email: 'hfgy@ghjf.com'
     },
-    imgUrl: '/assets/img/apartment-2-min.jpg'
+    imgUrl: './assets/img/apartment-2-min.jpg'
 },
 {
   id: '111111111111111111111113',

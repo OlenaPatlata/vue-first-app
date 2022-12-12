@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <h2>{{text}}</h2>
+    <CustomInput
+      :modelValue="text"
+      @update:modelValue="text = $event"/>
     <ApartmentsList :items="apartmens">
       <template v-slot:apartment="{apartment}">
         <ApartmentsItem
@@ -7,7 +11,9 @@
           :descr="apartment.descr" 
           :price="apartment.price" 
           :rating="apartment.rating"
-          :imgSrc="apartment.imgUrl"/>
+          :imgSrc="apartment.imgUrl"
+          @click="handleItemClick"
+          />
       </template>
     </ApartmentsList>
       
@@ -19,18 +25,26 @@
 import ApartmentsList from './components/apartment/ApartmentsList.vue'
 import apartmens from './components/apartment/apartment'
 import ApartmentsItem from './components/apartment/ApartmentsItem.vue'
+import CustomInput from './components/shared/CustomInput.vue'
 
 export default {
   name: 'App',
   components: {
     ApartmentsList,
-    ApartmentsItem
+    ApartmentsItem,
+    CustomInput
   },
   data(){
     return {
-      apartmens
+      apartmens,
+      text: '',
     }
   },
+  methods: {
+    handleItemClick(){
+      console.log('item click')
+    }
+  }
 }
 </script>
 
